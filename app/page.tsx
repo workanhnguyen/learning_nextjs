@@ -1,8 +1,12 @@
 import React from 'react'
 
+import { HeroSection } from '@/components'
+
 const HomePage = () => {
   return (
-    <main className='overflow-hidden'>HomePage</main>
+    <main className='overflow-hidden'>
+      <HeroSection />
+    </main>
   )
 }
 
