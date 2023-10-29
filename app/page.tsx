@@ -2,6 +2,7 @@ import React from "react";
 
 import { CarCard, CustomFilter, HeroSection, SearchBar } from "@/components";
 import { fetchCars } from "@/utils";
+import { fuels, yearsOfProduction } from "@/constants";
 
 const HomePage = async ({ searchParams }: { searchParams: any}) => {
   const allCars = await fetchCars({
@@ -26,8 +27,8 @@ const HomePage = async ({ searchParams }: { searchParams: any}) => {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            {/* <CustomFilter title="fuel" />
-            <CustomFilter title="year" /> */}
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
 
