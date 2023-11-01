@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CarCard, CustomFilter, HeroSection, SearchBar } from "@/components";
+import { CarCard, CustomFilter, HeroSection, SearchBar, ShowMore } from "@/components";
 import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
 
@@ -37,6 +37,7 @@ const HomePage = async ({ searchParams }: { searchParams: any}) => {
             <div className="home__cars-wrapper">
               {allCars?.map((car) => <CarCard car={car} />)}
             </div>
+            <ShowMore pageNumber={(searchParams.limit || 10) / 10} isNext={(searchParams.limit || 10) > allCars.length} />
           </section>
         ) : (
           <div className="home__error-container">
